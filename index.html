@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naomi Studios | Next-Gen Frontend</title>
-    <link rel="icon" href="favvicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <style>
@@ -172,7 +171,9 @@
             <button onclick="switchView('philosophy')" class="hover:text-white transition-colors cursor-pointer">Frontend-First</button>
             <button onclick="switchView('blog')" class="hover:text-white transition-colors cursor-pointer">Journal</button>
             <button onclick="switchView('contact')" class="hover:text-white transition-colors cursor-pointer">Contact</button>
-            <button class="px-5 py-2 glass rounded-full text-white border-cyan-500/30 hover:border-cyan-500 transition-all">Start Project</button>
+            <button onclick="switchView('samples')" class="hover:text-white transition-colors cursor-pointer">Samples</button>
+            <button onclick="switchView('contact')" class="px-5 py-2 glass rounded-full text-white border-cyan-500/30 hover:border-cyan-500 transition-all">Start Project</button>
+            
         </div>
     </nav>
 
@@ -197,6 +198,9 @@
                 </button>
                 <button onclick="switchView('philosophy')" class="px-8 py-4 glass text-white font-bold rounded-lg hover:bg-white/10 transition-all">
                     Our Philosophy
+                </button>
+                <button onclick="switchView('samples')" class="px-8 py-4 glass text-white font-bold rounded-lg hover:bg-white/10 transition-all">
+                    Our Samples
                 </button>
             </div>
         </main>
@@ -309,6 +313,54 @@
                     < [ return_to_base ]
                 </button>
             </div>
+        </main>
+    </div>
+
+
+
+     <!-- SAMPLE SPACE VIEW (Updated: No Rotating Cards) -->
+    <div id="samples-view" class="view-transition hidden-view">
+        <main class="relative z-10 max-w-7xl mx-auto px-6 py-20">
+            <div class="text-center mb-16">
+                <div class="mono text-cyan-400 text-sm mb-4">// THE_SAMPLE_SPACE</div>
+                <h2 class="text-4xl md:text-6xl font-bold mb-6">The <span class="gradient-text">Sample Space.</span></h2>
+                <p class="text-slate-400 max-w-3xl mx-auto text-lg leading-relaxed mb-4">
+                    Live production demos and hosted experiments. Each module is a direct link to an active environment.
+                </p>
+            </div>
+
+            <div class="cards-grid mb-20">
+                
+                <!-- Project Card: 3D Visualization -->
+                <div class="project-card rounded-2xl p-8 flex flex-col h-full relative overflow-hidden group">
+                    <!-- Tech Background Decor -->
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                    </div>
+
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center text-cyan-400 border border-cyan-500/20">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                        </div>
+                        <div class="mono text-[10px] text-slate-500 bg-white/5 px-2 py-1 rounded">REV_2024.1</div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-3">Naomi Minimalist</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                        A sample website built with a frontend-first approach, showcasing ultra-lightweight design and optimized performance for small businesses.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="mono text-[9px] px-2 py-1 bg-white/5 rounded text-cyan-400/70 border border-cyan-400/10">HTML</span>
+                        <span class="mono text-[9px] px-2 py-1 bg-white/5 rounded text-cyan-400/70 border border-cyan-400/10">SCSS</span>
+                        <span class="mono text-[9px] px-2 py-1 bg-white/5 rounded text-cyan-400/70 border border-cyan-400/10">JS</span>
+                    </div>
+
+                    <a href="https://siductify.github.io/minimalist/" target="_blank" class="w-full py-3 bg-white text-black font-bold text-center rounded-lg hover:bg-cyan-400 transition-colors flex items-center justify-center gap-2">
+                        View Project
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                </div>
         </main>
     </div>
 
@@ -475,6 +527,7 @@
                 home: document.getElementById('home-view'),
                 philosophy: document.getElementById('philosophy-view'),
                 blog: document.getElementById('blog-view'),
+                samples: document.getElementById('samples-view'),
                 contact: document.getElementById('contact-view')
             };
             
